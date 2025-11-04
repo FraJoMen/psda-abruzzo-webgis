@@ -11,40 +11,6 @@ var map = new ol.Map({
     })
 });
 
-// Base layer: OpenStreetMap (HTTPS)
-var baseOSM = new ol.layer.Tile({
-  title: 'OpenStreetMap',
-  type: 'base',
-  visible: true,
-  source: new ol.source.XYZ({
-    url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    attributions: '© OpenStreetMap contributors'
-  })
-});
-
-layersList.unshift(baseOSM);
-map.getLayers().insertAt(0, baseOSM);
-
-// Base layer: WMS Regione Abruzzo (tentativo HTTPS)
-var baseWMS = new ol.layer.Tile({
-  title: 'Regione Abruzzo WMS',
-  type: 'base',
-  visible: true,
-  source: new ol.source.TileWMS({
-    url: 'https://geocatalogo.regione.abruzzo.it/erdas-iws/ogc/wms/',
-    params: {
-      'LAYERS': 'CartaTecnicaRegionale10k',   // <-- sostituisci con il nome layer corretto
-      'FORMAT': 'image/png',
-      'VERSION': '1.1.1'
-    },
-    serverType: 'geoserver',
-    transition: 0
-  })
-});
-
-// Inserisci la basemap all'inizio della lista dei layer
-layersList.unshift(baseWMS);
-map.getLayers().insertAt(0, baseWMS);
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
 map.getView().fit([420801.287882, 4655350.238856, 484645.542793, 4690249.027714], map.getSize());
@@ -543,13 +509,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Regionalizzazione delle precipitazioni mediante interpolazione dei risultati del PSDA<br />www.franciscojmendez.com';
+                linkElement.innerHTML = 'Regionalizzazione delle precipitazioni mediante interpolazione dei risultati del PSDA <a href="https://www.franciscojmendez.com">www.franciscojmendez.com</a>';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Regionalizzazione delle precipitazioni mediante interpolazione dei risultati del PSDA<br />www.franciscojmendez.com';
+            linkElement.innerHTML = 'Regionalizzazione delle precipitazioni mediante interpolazione dei risultati del PSDA <a href="https://www.franciscojmendez.com">www.franciscojmendez.com</a>';
         }
 
         titleElement.appendChild(linkElement);
