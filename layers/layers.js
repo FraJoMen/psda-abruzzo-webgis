@@ -477,14 +477,8 @@ var group_TR20 = new ol.layer.Group({
                                 layers: [lyr_RAS_n_TR20_1,lyr_Isolonee_n_TR20_2,lyr_RAS_h_TR20_3,lyr_Isolonee_h_TR20_4,lyr_Comuni_Analizzati_TR20_5,],
                                 fold: 'close',
                                 title: 'TR20'});
-// Spegni i gruppi di default
-group_TR20.setVisible(false);
-group_TR50.setVisible(false);
-group_TR100.setVisible(false);
-group_TR200.setVisible(false);
-group_TR500.setVisible(false);
 
-var layersList = [group_TR50,group_TR100,group_TR200,group_TR500];
+var layersList = [group_TR20,group_TR50,group_TR100,group_TR200,group_TR500];
 lyr_Isolonee_n_TR20_2.set('fieldAliases', {'ID': 'ID', 'n': 'n', });
 lyr_Isolonee_h_TR20_4.set('fieldAliases', {'ID': 'ID', 'h': 'h', });
 lyr_Comuni_Analizzati_TR20_5.set('fieldAliases', {'COMUNE': 'COMUNE', 'RAS_h_TR11': 'TR20 | h med:', 'RAS_h_TR12': 'TR20 | h min:', 'RAS_h_TR13': 'TR20 | h max:', 'RAS_n_TR11': 'TR20 | n med:', 'RAS_n_TR12': 'TR20 | n min:', 'RAS_n_TR13': 'TR20 | n max:', });
@@ -533,3 +527,17 @@ lyr_Comuni_Analizzati_TR500_25.set('fieldLabels', {'COMUNE': 'header label - vis
 lyr_Comuni_Analizzati_TR500_25.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
+
+// --- FORCE DEFAULT VISIBILITY (RUN LAST) ---
+[group_TR20, group_TR50, group_TR100, group_TR200].forEach(g => g.setVisible(false));
+
+// Attiva solo TR500 come gruppo
+group_TR500.setVisible(true);
+
+// Dentro TR500: accendi solo h e le isolinee h, spegni il resto
+lyr_RAS_h_TR500_23.setVisible(true);
+lyr_Isolonee_h_TR500_24.setVisible(true);
+
+lyr_RAS_n_TR500_21.setVisible(false);
+lyr_Isolonee_n_TR500_22.setVisible(false);
+lyr_Comuni_Analizzati_TR500_25.setVisible(false);
