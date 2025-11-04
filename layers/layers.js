@@ -527,17 +527,3 @@ lyr_Comuni_Analizzati_TR500_25.set('fieldLabels', {'COMUNE': 'header label - vis
 lyr_Comuni_Analizzati_TR500_25.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
-
-// --- FORCE DEFAULT VISIBILITY (RUN LAST) ---
-[group_TR20, group_TR50, group_TR100, group_TR200].forEach(g => g.setVisible(false));
-
-// Attiva solo TR500 come gruppo
-group_TR500.setVisible(true);
-
-// Dentro TR500: accendi solo h e le isolinee h, spegni il resto
-lyr_RAS_h_TR500_23.setVisible(true);
-lyr_Isolonee_h_TR500_24.setVisible(true);
-
-lyr_RAS_n_TR500_21.setVisible(false);
-lyr_Isolonee_n_TR500_22.setVisible(false);
-lyr_Comuni_Analizzati_TR500_25.setVisible(false);
