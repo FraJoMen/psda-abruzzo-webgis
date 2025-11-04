@@ -484,15 +484,6 @@ group_TR100.setVisible(false);
 group_TR200.setVisible(false);
 group_TR500.setVisible(false);
 
-// Accendi il gruppo TR500 e SOLO i due layer che vuoi
-group_TR500.setVisible(true);
-lyr_RAS_h_TR500_23.setVisible(true);        // raster h
-lyr_Isolonee_h_TR500_24.setVisible(true);    // isolinee h
-// spegni gli altri nel gruppo TR500
-lyr_RAS_n_TR500_21.setVisible(false);
-lyr_Isolonee_n_TR500_22.setVisible(false);
-lyr_Comuni_Analizzati_TR500_25.setVisible(false);
-
 var layersList = [group_TR50,group_TR100,group_TR200,group_TR500];
 lyr_Isolonee_n_TR20_2.set('fieldAliases', {'ID': 'ID', 'n': 'n', });
 lyr_Isolonee_h_TR20_4.set('fieldAliases', {'ID': 'ID', 'h': 'h', });
