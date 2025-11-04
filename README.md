@@ -1,12 +1,12 @@
 # PSDA Abruzzo – WebGIS Parametri CPP (h(1,T), n(T))
 
-Questo WebGIS rende disponibili in forma aperta e consultabile i raster dei parametri pluviometrici \(h_{(1,T)}\) (mm) e \(n(T)\) (–) utilizzati nel modello delle curve di possibilità pluviometrica (CPP):
-\[
-h(d,T) = h_{(1,T)} \cdot d^{\,n(T)}
-\]
-per tempi di ritorno \(T = 20, 50, 100, 200, 500\) anni.
+Questo WebGIS rende disponibili in forma aperta e consultabile i **raster dei parametri pluviometrici** *h(1,T)* (mm) e *n(T)* (–) utilizzati nel modello delle **curve di possibilità pluviometrica (CPP)**:
 
-👉 **Apri la mappa:** https://frajomen.github.io/psda-abruzzo-webgis/
+> **h(d, T) = h(1, T) · dⁿ(T)**
+
+per tempi di ritorno **T = 20, 50, 100, 200, 500 anni**.
+
+👉 **[Apri la mappa interattiva](https://frajomen.github.io/psda-abruzzo-webgis/)**
 
 ---
 
