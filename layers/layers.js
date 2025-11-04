@@ -2,15 +2,6 @@ ol.proj.proj4.register(proj4);
 //ol.proj.get("EPSG:32633").setExtent([420801.287882, 4655350.238856, 484645.542793, 4690249.027714]);
 var wms_layers = [];
 
-var lyr_OSMGray = new ol.layer.Tile({
-  title: "OSM Grayscale",
-  visible: true,
-  source: new ol.source.XYZ({
-    url: 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-    attributions: '© OpenStreetMap contributors',
-    maxZoom: 18
-  })
-});
 var lyr_RAS_n_TR20_1 = new ol.layer.Image({
         opacity: 1,
         
@@ -486,8 +477,6 @@ var group_TR20 = new ol.layer.Group({
                                 layers: [lyr_RAS_n_TR20_1,lyr_Isolonee_n_TR20_2,lyr_RAS_h_TR20_3,lyr_Isolonee_h_TR20_4,lyr_Comuni_Analizzati_TR20_5,],
                                 fold: 'close',
                                 title: 'TR20'});
-
-var layersList = [lyr_OSMGray,group_TR50,group_TR100,group_TR200,group_TR500];
 // Spegni i gruppi di default
 group_TR20.setVisible(false);
 group_TR50.setVisible(false);
@@ -504,6 +493,7 @@ lyr_RAS_n_TR500_21.setVisible(false);
 lyr_Isolonee_n_TR500_22.setVisible(false);
 lyr_Comuni_Analizzati_TR500_25.setVisible(false);
 
+var layersList = [group_TR50,group_TR100,group_TR200,group_TR500];
 lyr_Isolonee_n_TR20_2.set('fieldAliases', {'ID': 'ID', 'n': 'n', });
 lyr_Isolonee_h_TR20_4.set('fieldAliases', {'ID': 'ID', 'h': 'h', });
 lyr_Comuni_Analizzati_TR20_5.set('fieldAliases', {'COMUNE': 'COMUNE', 'RAS_h_TR11': 'TR20 | h med:', 'RAS_h_TR12': 'TR20 | h min:', 'RAS_h_TR13': 'TR20 | h max:', 'RAS_n_TR11': 'TR20 | n med:', 'RAS_n_TR12': 'TR20 | n min:', 'RAS_n_TR13': 'TR20 | n max:', });
