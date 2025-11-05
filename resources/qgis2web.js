@@ -11,9 +11,8 @@ var map = new ol.Map({
     })
 });
 
-
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([420801.287882, 4655350.238856, 484645.542793, 4690249.027714], map.getSize());
+map.getView().fit([385112.144099, 4668688.761244, 444932.773942, 4703587.550103], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -900,7 +899,7 @@ let measuring = false;
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_Comuni_Analizzati_TR20_5,
+    layer: lyr_Comuni_Analizzati_TR500_25,
     colName: 'COMUNE',
     zoom: 10,
     collapsed: true,
