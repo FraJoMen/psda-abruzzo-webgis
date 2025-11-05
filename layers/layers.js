@@ -3,17 +3,17 @@ ol.proj.proj4.register(proj4);
 var wms_layers = [];
 
 
-        var lyr_OpenStreetMap_0 = new ol.layer.Tile({
-            'title': 'OpenStreetMap',
-            'type':'base',
-            'opacity': 1.000000,
-            
-            
-            source: new ol.source.XYZ({
-            attributions: ' ',
-                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+var lyr_OpenStreetMap_0 = new ol.layer.Tile({
+    'title': 'OpenStreetMap',
+    'type':'base',
+    'opacity': 1.000000,
+                  
+    source: new ol.source.XYZ({
+    attributions: '&copy; OpenStreetMap contributors &copy; CARTO',
+	url: 'https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
             })
-        });
+});
+
 var lyr_RAS_n_TR20_1 = new ol.layer.Image({
         opacity: 1,
         
