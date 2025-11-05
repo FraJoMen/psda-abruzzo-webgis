@@ -2,6 +2,22 @@ ol.proj.proj4.register(proj4);
 //ol.proj.get("EPSG:32633").setExtent([420801.287882, 4655350.238856, 484645.542793, 4690249.027714]);
 var wms_layers = [];
 
+var lyr_100k_Fisicaecw_0 = new ol.layer.Tile({
+                            source: new ol.source.TileWMS(({
+                              url: "http://geocatalogo.regione.abruzzo.it/erdas-iws/ogc/wms/?version%3D1.3.0",
+                              attributions: ' ',
+                              params: {
+                                "LAYERS": "Mosaici_UTM-WGS84_100k_Fisica.ecw",
+                                "TILED": "true",
+                                "VERSION": "1.3.0"},
+                            })),
+                            title: '100k_Fisica.ecw',
+                            popuplayertitle: '100k_Fisica.ecw',
+                            opacity: 1.000000,
+                            
+                            
+                          });
+              wms_layers.push([lyr_100k_Fisicaecw_0, 0]);
 var lyr_RAS_n_TR20_1 = new ol.layer.Image({
         opacity: 1,
         
@@ -478,7 +494,8 @@ var group_TR20 = new ol.layer.Group({
                                 fold: 'close',
                                 title: 'TR20'});
 
-var layersList = [group_TR20,group_TR50,group_TR100,group_TR200,group_TR500];
+lyr_100k_Fisicaecw_0.setVisible(true);lyr_RAS_n_TR20_1.setVisible(false);lyr_Isolonee_n_TR20_2.setVisible(false);lyr_RAS_h_TR20_3.setVisible(false);lyr_Isolonee_h_TR20_4.setVisible(false);lyr_Comuni_Analizzati_TR20_5.setVisible(false);lyr_RAS_n_TR50_6.setVisible(false);lyr_Isolonee_n_TR50_7.setVisible(false);lyr_RAS_h_TR50_8.setVisible(false);lyr_Isolonee_h_TR50_9.setVisible(false);lyr_Comuni_Analizzati_TR50_10.setVisible(false);lyr_RAS_n_TR100_11.setVisible(false);lyr_Isolonee_n_TR100_12.setVisible(false);lyr_RAS_h_TR100_13.setVisible(false);lyr_Isolonee_h_TR100_14.setVisible(false);lyr_Comuni_Analizzati_TR100_15.setVisible(false);lyr_RAS_n_TR200_16.setVisible(false);lyr_Isolonee_n_TR200_17.setVisible(false);lyr_RAS_h_TR200_18.setVisible(false);lyr_Isolonee_h_TR200_19.setVisible(false);lyr_Comuni_Analizzati_TR200_20.setVisible(false);lyr_RAS_n_TR500_21.setVisible(false);lyr_Isolonee_n_TR500_22.setVisible(false);lyr_RAS_h_TR500_23.setVisible(true);lyr_Isolonee_h_TR500_24.setVisible(true);lyr_Comuni_Analizzati_TR500_25.setVisible(true);
+var layersList = [lyr_100k_Fisicaecw_0,group_TR20,group_TR50,group_TR100,group_TR200,group_TR500];
 lyr_Isolonee_n_TR20_2.set('fieldAliases', {'ID': 'ID', 'n': 'n', });
 lyr_Isolonee_h_TR20_4.set('fieldAliases', {'ID': 'ID', 'h': 'h', });
 lyr_Comuni_Analizzati_TR20_5.set('fieldAliases', {'COMUNE': 'COMUNE', 'RAS_h_TR11': 'TR20 | h med:', 'RAS_h_TR12': 'TR20 | h min:', 'RAS_h_TR13': 'TR20 | h max:', 'RAS_n_TR11': 'TR20 | n med:', 'RAS_n_TR12': 'TR20 | n min:', 'RAS_n_TR13': 'TR20 | n max:', });
