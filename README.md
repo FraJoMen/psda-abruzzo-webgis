@@ -4,6 +4,9 @@ Il **WebGIS – Piogge PSDA Abruzzo** è uno strumento interattivo sviluppato pe
 
 👉 **[Apri la mappa interattiva](https://frajomen.github.io/psda-abruzzo-webgis/)**
 
+📄 **Approfondimento completo:**  
+🔗 [Articolo sul sito di Francisco J. Mendez](https://www.franciscojmendez.com/progetti/mappe-piogge-abruzzo/)
+
 ---
 
 ## 🌧️ Descrizione
